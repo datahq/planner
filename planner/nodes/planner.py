@@ -12,6 +12,7 @@ from .node_collector import collect_artifacts
 from .base_processing_node import ProcessingArtifact
 from ..utilities import s3_path
 
+
 def planner(datapackage_input, processing, outputs, allowed_types=None):
     parameters = datapackage_input.get('parameters')
     datapackage_url = datapackage_input['url']
