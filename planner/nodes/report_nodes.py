@@ -16,7 +16,7 @@ class ReportProcessingNode(BaseProcessingNode):
         ]
         output = ProcessingArtifact(
             datahub_type, resource_name,
-            tabular_artifacts, [],
+            [], tabular_artifacts,
             [('assembler.validate_resource', {})],
             False)
         yield output
