@@ -29,7 +29,8 @@ class DerivedFormatProcessingNode(BaseProcessingNode):
                               }
                           }
                       })],
-                    True
+                    True,
+                    'Create %s file' % self.fmt.upper()
                 )
                 yield output
 
@@ -66,6 +67,7 @@ class NonTabularProcessingNode(BaseProcessingNode):
                               }
                           }
                       })],
-                    False
+                    False,
+                    'Copy source data'
                 )
                 yield output
