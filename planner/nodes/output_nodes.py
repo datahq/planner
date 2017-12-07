@@ -38,6 +38,6 @@ class OutputToZipProcessingNode(BaseProcessingNode):
                     'description': 'Compressed versions of dataset. Includes normalized CSV and JSON data with original data and datapackage.json.' #noqa
                  })],
                 False,
-                'Create ZIP file'
+                'Creating ZIP'
             )
             yield output

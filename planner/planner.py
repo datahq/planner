@@ -130,7 +130,7 @@ def _plan(revision, spec, **config):
         'dependencies': dependencies,
         'pipeline': steps(*final_steps),
         'hooks': [FLOWMANAGER_HOOK_URL],
-        'title': 'Create DataSet'
+        'title': 'Creating Package'
     }
     # print('yielding', pipeline_id(), pipeline)
     yield pipeline_id(), pipeline

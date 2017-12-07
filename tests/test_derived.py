@@ -41,13 +41,13 @@ def test_titles(spec, config):
     """Tests for a derived resource to exist"""
     flow = planner.plan(1, spec, **config)
     titles = [
-        "Create CSV file",
-        "Create JSON file",
-        "Create ZIP file",
-        "Generate views",
-        "Validate package contents",
-        "Copy source data",
-        "Create DataSet",
+        "Creating CSV",
+        "Creating JSON",
+        "Creating ZIP",
+        "Generating views",
+        "Validating package contents",
+        "Copying source data",
+        "Creating Package",
     ]
     for pipeline_id, pipeline_details in flow:
         assert pipeline_details['title'] in titles
