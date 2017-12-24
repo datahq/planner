@@ -147,7 +147,6 @@ def planner(datapackage_input, processing, outputs, allowed_types=None):
                     ('stream_remote_resources',)
                 ] + required_artifact.pipeline_steps)
 
-
         for required_artifact in derived_artifact.required_other_artifacts:
             ri = resource_info[required_artifact.resource_name]
             if 'resource' in ri:
