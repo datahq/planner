@@ -130,6 +130,9 @@ def planner(datapackage_input, processing, outputs, allowed_types=None):
         pipeline_steps: List[Tuple] = [
             ('add_metadata', {'name': derived_artifact.resource_name}),
         ]
+
+        required_artifact_pipeline_steps = []
+        needs_streaming = False
         for required_artifact in derived_artifact.required_streamed_artifacts:
             ri = resource_info[required_artifact.resource_name]
             if 'resource' in ri:
@@ -140,12 +143,18 @@ def planner(datapackage_input, processing, outputs, allowed_types=None):
                         'stream': True
                     })
                 )
-                pipeline_steps.extend(required_artifact.pipeline_steps)
             else:
-                pipeline_steps.extend([
-                    ('add_resource', ri),
-                    ('stream_remote_resources',)
-                ] + required_artifact.pipeline_steps)
+                pipeline_steps.append(('add_resource', ri))
+                needs_streaming = True
+            required_artifact_pipeline_steps.extend(required_artifact.pipeline_steps)
+
+        if needs_streaming:
+            pipeline_steps.extend([
+                ('assembler.sample',),
+                ('stream_remote_resources',)
+            ])
+
+        pipeline_steps.extend(required_artifact_pipeline_steps)
 
         for required_artifact in derived_artifact.required_other_artifacts:
             ri = resource_info[required_artifact.resource_name]
