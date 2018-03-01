@@ -8,9 +8,9 @@ import itertools
 
 ORDERED_NODE_CLASSES = [
     ReportProcessingNode,
+    NonTabularProcessingNode,
     DerivedCSVProcessingNode,
     DerivedJSONProcessingNode,
-    NonTabularProcessingNode,
     OutputToZipProcessingNode,
     DerivedPreviewProcessingNode,
 ]
