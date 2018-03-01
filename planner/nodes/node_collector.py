@@ -10,9 +10,9 @@ ORDERED_NODE_CLASSES = [
     ReportProcessingNode,
     DerivedCSVProcessingNode,
     DerivedJSONProcessingNode,
+    NonTabularProcessingNode,
     OutputToZipProcessingNode,
     DerivedPreviewProcessingNode,
-    NonTabularProcessingNode,
 ]
 
 
