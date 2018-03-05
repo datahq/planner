@@ -62,14 +62,15 @@ class NonTabularProcessingNode(BaseProcessingNode):
                 output = ProcessingArtifact(
                     datahub_type, resource_name,
                     [], [artifact],
-                    [('assembler.update_resource',
+                    [('assembler.update_source',
                       {
                           'name': artifact.resource_name,
                           'update': {
                               'name': resource_name,
                               'datahub': {
                                 'type': datahub_type
-                              }
+                              },
+                              'base-path': 'archive'
                           }
                       })],
                     False,

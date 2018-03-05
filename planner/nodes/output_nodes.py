@@ -23,11 +23,13 @@ class OutputToZipProcessingNode(BaseProcessingNode):
                 datahub_type, resource_name,
                 [], self.available_artifacts,
                 [('assembler.extract_readme', {}),
+                 ('assembler.deduplicate_resources', {}),
                  ('assembler.remove_hash', {}),
                  ('dump.to_zip', {
                     'out-file': tmp_zip,
                     'force-format': False,
-                    'handle-non-tabular': True}),
+                    'handle-non-tabular': True,
+                    'pretty-descriptor': True}),
                  ('assembler.clear_resources', {}),
                  ('add_resource', {
                     'url': tmp_zip,
