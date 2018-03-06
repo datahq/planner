@@ -27,7 +27,9 @@ class OutputToZipProcessingNode(BaseProcessingNode):
                  ('dump.to_zip', {
                     'out-file': tmp_zip,
                     'force-format': False,
-                    'handle-non-tabular': True}),
+                    'handle-non-tabular': True,
+                    'pretty-descriptor': True
+                    }),
                  ('assembler.clear_resources', {}),
                  ('add_resource', {
                     'url': tmp_zip,

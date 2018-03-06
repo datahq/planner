@@ -7,11 +7,11 @@ from .report_nodes import ReportProcessingNode
 
 ORDERED_NODE_CLASSES = [
     ReportProcessingNode,
+    NonTabularProcessingNode,
     DerivedCSVProcessingNode,
     DerivedJSONProcessingNode,
     OutputToZipProcessingNode,
     DerivedPreviewProcessingNode,
-    NonTabularProcessingNode,
 ]
 
 
