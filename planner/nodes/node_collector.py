@@ -1,5 +1,5 @@
 from .basic_nodes import DerivedCSVProcessingNode, DerivedJSONProcessingNode, \
-    NonTabularProcessingNode
+    OriginalProcessingNode
 from .view_nodes import DerivedPreviewProcessingNode
 from .output_nodes import OutputToZipProcessingNode
 from .report_nodes import ReportProcessingNode
@@ -7,11 +7,11 @@ from .report_nodes import ReportProcessingNode
 
 ORDERED_NODE_CLASSES = [
     ReportProcessingNode,
-    NonTabularProcessingNode,
     DerivedCSVProcessingNode,
     DerivedJSONProcessingNode,
     OutputToZipProcessingNode,
     DerivedPreviewProcessingNode,
+    OriginalProcessingNode,
 ]
 
 
