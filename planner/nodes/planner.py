@@ -87,7 +87,6 @@ def planner(datapackage_input, prefix, processing, outputs, allowed_types=None):
         }
         descriptor['path'] = os.path.join('archive', '{}.{}'.format(name, extension))
 
-
     resource_info.extend(tabular_info)
 
     # Processing on resources
